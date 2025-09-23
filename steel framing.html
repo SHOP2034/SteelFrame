@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel Framing - Construcción Inteligente</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Barra de navegación */
+    header {
+      background: linear-gradient(90deg, #0a2b68, #0a2b68);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    header img {
+      height: 240px;
+      margin-bottom: 8px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+    }
+    nav a {
+      margin: 6px 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('fondohero.png') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 50px 15px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #264653;
+    }
+
+    /* Quiero Saber Más */
+    .about-steel {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-top: 40px;
+    }
+    .about-steel img {
+      max-width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    /* Beneficios */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      word-wrap: break-word;
+    }
+    .benefit {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .benefit h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Comparación */
+    .comparison {
+      overflow-x: hidden;
+    }
+    .comparison table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      table-layout: fixed;
+    }
+    .comparison th,
+    .comparison td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.95em;
+      white-space: normal;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .comparison th {
+      background: #2a9d8f;
+      color: #fff;
+    }
+
+    /* Barras comparativas */
+    .bar-container {
+      background: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 22px;
+      margin: 5px 0;
+    }
+    .bar {
+      height: 100%;
+      text-align: right;
+      padding-right: 8px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 22px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .steel { background: #2a9d8f; }
+    .prefab { background: #f4a261; }
+    .palmar { background: #e76f51; }
+    .cemento { background: #457b9d; }
+
+    /* Galería */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Contacto */
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin-top: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: #264653;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsividad */
+    @media (max-width: 1024px) {
+      .comparison th,
+      .comparison td {
+        font-size: 0.85em;
+        padding: 10px 6px;
+      }
+    }
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 15px;
+      }
+      .hero h1 {
+        font-size: 2em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+      header img {
+        height: 160px;
+        margin-bottom: 10px;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 8px 0;
+      }
+      .comparison th,
+      .comparison td {
+        font-size: 0.75em;
+        padding: 8px 4px;
+      }
+      .bar-container {
+        height: 16px;
+      }
+      .bar {
+        font-size: 10px;
+        line-height: 16px;
+        padding-right: 2px;
+      }
+    }
+    @media (max-width: 480px) {
+      .comparison th,
+      .comparison td {
+        font-size: 0.65em;
+        padding: 6px 2px;
+      }
+      .bar-container {
+        height: 14px;
+      }
+      .bar {
+        font-size: 9px;
+        line-height: 14px;
+        padding-right: 2px;
+      }
+    }
+    @media (max-width: 360px) {
+      .comparison th,
+      .comparison td {
+        font-size: 0.55em;
+        padding: 4px 2px;
+      }
+      .bar-container {
+        height: 12px;
+      }
+      .bar {
+        font-size: 8px;
+        line-height: 12px;
+        padding-right: 1px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="SteelFramelogo.png" alt="Logo de Steel Framing" />
+    <nav>
+      <a href="#quiero-saber-mas">Quiero Saber Más</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#comparacion">Comparación</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Construcción Inteligente en Steel Framing</h1>
+    <p>Más rápido, seguro y eficiente que los métodos tradicionales.</p>
+  </section>
+
+  <!-- Quiero Saber Más -->
+  <section id="quiero-saber-mas" class="about-steel">
+    <h2>¿Qué es el Steel Framing?</h2>
+    <p>
+      El <strong>Steel Framing</strong> es un sistema de construcción en seco que utiliza
+      perfiles de acero galvanizado como estructura principal.
+      Permite levantar viviendas y edificios con gran rapidez, ofreciendo
+      <b>durabilidad, eficiencia energética y flexibilidad en el diseño</b>.
+      Gracias a su tecnología, es posible integrar materiales aislantes,
+      placas resistentes y terminaciones modernas en menos tiempo que con la
+      construcción tradicional.
+    </p>
+    <p>
+      En la siguiente imagen puedes ver cómo se componen las paredes en este
+      sistema:
+    </p>
+    <img src="partes-de-una-pared-con-steel-frame-1.jpg" alt="Capas de una pared de Steel Framing" />
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="benefits">
+    <h2>Beneficios del Steel Framing</h2>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <h3>🏗 Rapidez</h3>
+        <p>Más veloz que la construcción tradicional.</p>
+      </div>
+      <div class="benefit">
+        <h3>🛡 Durabilidad</h3>
+        <p>Resistente a humedad, plagas y deformaciones.</p>
+      </div>
+      <div class="benefit">
+        <h3>🌡 Eficiencia</h3>
+        <p>Aislamiento superior y terminaciones modernas.</p>
+      </div>
+      <div class="benefit">
+        <h3>🔥 Seguridad</h3>
+        <p>Mejor resistencia ante incendios.</p>
+      </div>
+      <div class="benefit">
+        <h3>⚖️ Flexibilidad</h3>
+        <p>Permite diseños modernos y modulares.</p>
+      </div>
+      <div class="benefit">
+        <h3>💲 Costos</h3>
+        <p>Más ahorro en construcción y mantenimiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparación -->
+  <section id="comparacion" class="comparison">
+    <h2>Comparación de Métodos de Construcción</h2>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Steel Framing</th>
+            <th>Casas Prefabricadas</th>
+            <th>Ladrillos Palmar</th>
+            <th>Ladrillos de Cemento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tiempo de construcción</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:95%;">95%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:70%;">70%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:50%;">50%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:30%;">30%</div></div></td>
+          </tr>
+          <tr>
+            <td>Durabilidad</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:95%;">95%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:50%;">50%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:80%;">80%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:85%;">85%</div></div></td>
+          </tr>
+          <tr>
+            <td>Aislamiento térmico</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:90%;">90%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:65%;">65%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:80%;">80%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:70%;">70%</div></div></td>
+          </tr>
+          <tr>
+            <td>Aislamiento acústico</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:85%;">85%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:40%;">40%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:80%;">80%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:70%;">70%</div></div></td>
+          </tr>
+          <tr>
+            <td>Seguridad (sismos/incendios)</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:95%;">95%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:40%;">40%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:70%;">70%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:65%;">65%</div></div></td>
+          </tr>
+          <tr>
+            <td>Flexibilidad de diseño</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:95%;">95%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:45%;">45%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:60%;">60%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:50%;">50%</div></div></td>
+          </tr>
+          <tr>
+            <td>Costo inicial</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:70%;">70%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:80%;">80%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:75%;">75%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:75%;">75%</div></div></td>
+          </tr>
+          <tr>
+            <td>Ahorro a largo plazo</td>
+            <td><div class="bar-container"><div class="bar steel" style="width:95%;">95%</div></div></td>
+            <td><div class="bar-container"><div class="bar prefab" style="width:50%;">50%</div></div></td>
+            <td><div class="bar-container"><div class="bar palmar" style="width:70%;">70%</div></div></td>
+            <td><div class="bar-container"><div class="bar cemento" style="width:70%;">70%</div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="proyectos" class="gallery">
+    <h2>Proyectos Realizados</h2>
+    <div class="gallery-grid">
+      <img src="proyecto1.jpg" alt="Proyecto 1" />
+      <img src="proyecto2.jpg" alt="Proyecto 2" />
+      <img src="proyecto3.jpg" alt="Proyecto 3" />
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>Comunícate con nosotros directamente por WhatsApp.</p>
+    <a href="https://wa.me/+54 9 11 6636-3614" target="_blank">Enviar WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Steel Framing. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
