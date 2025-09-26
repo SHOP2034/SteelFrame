@@ -1,56 +1,235 @@
-<!-- Proyectos -->
-<section id="proyectos" class="projects">
-  <h2>Proyectos Realizados</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel Framing - Construcción Inteligente</title>
 
-  <!-- Slider automático -->
-  <div class="slider">
-    <div class="slides">
-      <div class="slide active">
-        <img src="proyecto1.jpg" alt="Proyecto 1" onclick="openLightbox('proyecto1.jpg')">
-        <h3>Casa Moderna</h3>
-        <p>Diseño minimalista y ejecución rápida en steel framing.</p>
+  <!-- Favicon principal -->
+  <link rel="icon" href="SteelFramelogo.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="SteelFramelogo.png" type="image/png" sizes="192x192">
+  <link rel="shortcut icon" href="SteelFramelogo.ico" type="image/x-icon">
+
+  <!-- Apple / iOS -->
+  <link rel="apple-touch-icon" href="SteelFramelogo.png" sizes="180x180">
+
+  <!-- Manifest para Android/Chrome -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Color del navegador móvil -->
+  <meta name="theme-color" content="#0a2b68">
+
+  <!-- Estilos externos -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Contenedor de botones */
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+      margin-top: 20px;
+    }
+
+    /* Botones generales */
+    .contact-buttons a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      min-width: 140px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+      opacity: 0; /* inicial invisible */
+      transform: translateY(40px); /* empieza desplazado */
+    }
+
+    /* Animación activa */
+    .contact-buttons a.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Borde distinto */
+    .contact-buttons .marcelo {
+      border: 3px solid #007bff; /* azul */
+    }
+    .contact-buttons .gabriel {
+      border: 3px solid #ff9800; /* naranja */
+    }
+
+    /* Hover */
+    .contact-buttons a:hover {
+      background: #1ebc57;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(37, 211, 102, 0.7);
+    }
+
+    /* Logo WhatsApp */
+    .contact-buttons img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 6px;
+    }
+
+    /* Nombre */
+    .contact-name {
+      font-size: 1.1em;
+    }
+
+    /* Ajuste responsivo */
+    @media (max-width: 400px) {
+      .contact-buttons {
+        gap: 10px;
+      }
+      .contact-buttons a {
+        padding: 12px 15px;
+        min-width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="SteelFramelogo.png" alt="Logo de Steel Framing" />
+    <nav>
+      <a href="#quiero-saber-mas">Quiero Saber Más</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#comparacion">Comparación</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Construcción Inteligente en Steel Framing</h1>
+    <p>Más rápido, seguro y eficiente que los métodos tradicionales.</p>
+  </section>
+
+  <!-- Quiero Saber Más -->
+  <section id="quiero-saber-mas" class="about-steel">
+    <h2>¿Qué es el Steel Framing?</h2>
+    <p>
+      El <strong>Steel Framing</strong> es un sistema de construcción en seco que utiliza
+      perfiles de acero galvanizado como estructura principal.
+      Permite levantar viviendas y edificios con gran rapidez, ofreciendo
+      <b>durabilidad, eficiencia energética y flexibilidad en el diseño</b>.
+      Gracias a su tecnología, es posible integrar materiales aislantes,
+      placas resistentes y terminaciones modernas en menos tiempo que con la
+      construcción tradicional.
+    </p>
+    <p>
+      En la siguiente imagen puedes ver cómo se componen las paredes en este
+      sistema:
+    </p>
+    <img src="partes-de-una-pared-con-steel-frame-1.jpg" alt="Capas de una pared de Steel Framing" />
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="benefits">
+    <h2>Beneficios del Steel Framing</h2>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <h3>🏗 Rapidez</h3>
+        <p>Más veloz que la construcción tradicional.</p>
       </div>
-      <div class="slide">
-        <img src="proyecto2.jpg" alt="Proyecto 2" onclick="openLightbox('proyecto2.jpg')">
-        <h3>Dúplex Familiar</h3>
-        <p>Dos plantas con excelente aislamiento térmico y acústico.</p>
+      <div class="benefit">
+        <h3>🛡 Durabilidad</h3>
+        <p>Resistente a humedad, plagas y deformaciones.</p>
       </div>
-      <div class="slide">
-        <img src="proyecto3.jpg" alt="Proyecto 3" onclick="openLightbox('proyecto3.jpg')">
-        <h3>Oficina Sustentable</h3>
-        <p>Eficiencia energética con materiales reciclables.</p>
+      <div class="benefit">
+        <h3>🌡 Eficiencia</h3>
+        <p>Aislamiento superior y terminaciones modernas.</p>
+      </div>
+      <div class="benefit">
+        <h3>🔥 Seguridad</h3>
+        <p>Mejor resistencia ante incendios.</p>
+      </div>
+      <div class="benefit">
+        <h3>⚖️ Flexibilidad</h3>
+        <p>Permite diseños modernos y modulares.</p>
+      </div>
+      <div class="benefit">
+        <h3>💲 Costos</h3>
+        <p>Más ahorro en construcción y mantenimiento.</p>
       </div>
     </div>
-    <!-- Controles de puntos -->
-    <div class="dots">
-      <span class="dot active" onclick="goToSlide(0)"></span>
-      <span class="dot" onclick="goToSlide(1)"></span>
-      <span class="dot" onclick="goToSlide(2)"></span>
+  </section>
+
+  <!-- Comparación -->
+  <section id="comparacion" class="comparison">
+    <h2>Comparación de Métodos de Construcción</h2>
+    <div style="overflow-x:auto;">
+      <!-- Tabla comparativa aquí -->
     </div>
-  </div>
+  </section>
 
-  <!-- Botón ver más -->
-  <div class="more-projects">
-    <button onclick="openGallery()">Ver más proyectos</button>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="close">&times;</span>
-  <img id="lightbox-img" src="" alt="Proyecto ampliado">
-</div>
-
-<!-- Galería adicional -->
-<div id="gallery-modal" class="gallery-modal">
-  <div class="gallery-content">
-    <span class="close" onclick="closeGallery()">&times;</span>
-    <h2>Más Proyectos</h2>
+  <!-- Galería -->
+  <section id="proyectos" class="gallery">
+    <h2>Proyectos Realizados</h2>
     <div class="gallery-grid">
-      <img src="proyecto4.jpg" alt="Proyecto 4" onclick="openLightbox('proyecto4.jpg')">
-      <img src="proyecto5.jpg" alt="Proyecto 5" onclick="openLightbox('proyecto5.jpg')">
-      <img src="proyecto6.jpg" alt="Proyecto 6" onclick="openLightbox('proyecto6.jpg')">
-      <img src="proyecto7.jpg" alt="Proyecto 7" onclick="openLightbox('proyecto7.jpg')">
+      <img src="proyecto1.jpg" alt="Proyecto 1" />
+      <img src="proyecto2.jpg" alt="Proyecto 2" />
+      <img src="proyecto3.jpg" alt="Proyecto 3" />
     </div>
-  </div>
-</div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>Elegí con quién comunicarte por WhatsApp:</p>
+    
+    <div class="contact-buttons">
+      <!-- Botón Marcelo -->
+      <a href="https://wa.me/5491166363614?text=Hola%20estoy%20interesado%20en%20sus%20trabajos%20y%20quisiera%20pedir%20un%20presupuesto" 
+         target="_blank" aria-label="Chatear con Marcelo por WhatsApp" class="marcelo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span class="contact-name">Marcelo</span>
+      </a>
+
+      <!-- Botón Gabriel -->
+      <a href="https://wa.me/5493541746064?text=Hola%20estoy%20interesado%20en%20sus%20trabajos%20y%20quisiera%20pedir%20un%20presupuesto" 
+         target="_blank" aria-label="Chatear con Gabriel por WhatsApp" class="gabriel">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span class="contact-name">Gabriel</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Steel Framing. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+
+  <!-- Animación con IntersectionObserver -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".contact-buttons a");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // solo animar una vez
+          }
+        });
+      }, { threshold: 0.2 });
+
+      buttons.forEach(btn => observer.observe(btn));
+    });
+  </script>
+</body>
+</html>
